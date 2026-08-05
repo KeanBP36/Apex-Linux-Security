@@ -24,4 +24,4 @@ Apex-Linux-Security/
 └── secscan.timer           # Systemd timer unit definition
 
 ```bash
-git clone [https://github.com/KeanBP36/Apex-Linux-Security.git](https://github.com/KeanBP36/Apex-Linux-Security.git) && cd Apex-Linux-Security && sudo ./install.sh
+git clone https://github.com/KeanBP36/Apex-Linux-Security.git && cd Apex-Linux-Security && sudo ./install.sh
