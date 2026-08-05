@@ -1,0 +1,10 @@
+[Unit]
+Description=Run Security Scans Every Friday at 3 PM
+After=network.target
+
+[Timer]
+OnCalendar=Fri *-*-* 15:00:00
+Persistent=true
+
+[Install]
+WantedBy=timers.target
