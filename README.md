@@ -15,7 +15,7 @@ A comprehensive, automated local security auditing and hardening suite designed 
 
 ## Directory Structure
 
-```text
+
 Apex-Linux-Security/
 ├── README.md               # Documentation
 ├── install.sh              # Automated setup and dependency installer script
