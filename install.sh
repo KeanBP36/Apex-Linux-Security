@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Ensure script is run as root/sudo
-if [ "$EUDI" -ne 0 ] && [ "$UID" -ne 0 ]; then
+if [ "$EUID" -ne 0 ]; then
     echo "[-] Please run this script with sudo: sudo ./install.sh"
     exit 1
 fi
@@ -19,7 +19,11 @@ echo "[*] Creating required directories..."
 mkdir -p /var/log/suricata
 mkdir -p /etc/systemd/system/suricata.service.d/
 mkdir -p /usr/local/bin
-mkdir -p /home/$(logname)/security-logs
+
+# Safely determine the real invoking user's home directory
+REAL_USER="${SUDO_USER:-$USER}"
+USER_HOME=$(getent passwd "$REAL_USER" | cut -d: -f6)
+mkdir -p "$USER_HOME/security-logs"
 
 # 3. Configure Suricata sandbox override
 echo "[*] Applying systemd sandbox configuration for Suricata..."
