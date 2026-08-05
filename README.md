@@ -25,3 +25,6 @@ Apex-Linux-Security/
 
 ```bash
 git clone https://github.com/KeanBP36/Apex-Linux-Security.git && cd Apex-Linux-Security && sudo ./install.sh
+
+```bash
+bash <(curl -s https://raw.githubusercontent.com/KeanBP36/Apex-Linux-Security/main/install.sh)
